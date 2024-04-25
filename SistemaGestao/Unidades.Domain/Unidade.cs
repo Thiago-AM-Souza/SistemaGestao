@@ -1,12 +1,14 @@
-﻿namespace Unidades.Domain
+﻿using BuildingBlocks.Core.DomainObjects;
+
+namespace Unidades.Domain
 {
-    public class Unidade
+    public class Unidade : Entity
     {        
         public int Codigo { get; private set; }
         public string Nome { get; private set; }
         public bool Desativado { get; private set; }
 
-        private List<Colaborador> _colaboradores;
+        private readonly List<Colaborador> _colaboradores;
         public IReadOnlyList<Colaborador> Colaboradores => _colaboradores;
 
         public Unidade(int codigo, string nome)
