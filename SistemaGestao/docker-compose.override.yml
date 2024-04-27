@@ -1,37 +1,14 @@
 version: '3.4'
 
 services:
-  webapp.colaboradores.api:
+  webapp.gestao.api:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=4000
       - ASPNETCORE_HTTPS_PORTS=4001
     ports:
-      - "4000:4000"
-      - "4001:4001"
-    volumes:
-      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
-      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
-  webapp.unidades.api:
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_HTTP_PORTS=4100
-      - ASPNETCORE_HTTPS_PORTS=4101
-    ports:
-      - "4100:4100"
-      - "4101:4101"
-    volumes:
-      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
-      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
-
-  webapp.usuarios.api:
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_HTTP_PORTS=4200
-      - ASPNETCORE_HTTPS_PORTS=4201
-    ports:
-      - "4200:4200"
-      - "4201:4201"
+      - "4000"
+      - "4001"
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
       - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro

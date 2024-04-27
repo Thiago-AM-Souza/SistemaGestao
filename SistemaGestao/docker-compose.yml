@@ -1,33 +1,14 @@
 version: '3.4'
 
 services:
-  webapp.colaboradores.api:
-    image: ${DOCKER_REGISTRY-}webappcolaboradoresapi
+  webapp.gestao.api:
+    image: ${DOCKER_REGISTRY-}webappgestaoapi
     build:
       context: .
-      dockerfile: WebApp.Colaboradores.Api/Dockerfile
+      dockerfile: WebApp.Gestao.Api/Dockerfile
     ports:
-        - "4000:4000"
-        - "4001:4001"
-
-  webapp.unidades.api:
-    image: ${DOCKER_REGISTRY-}webappunidadesapi
-    build:
-      context: .
-      dockerfile: WebApp.Unidades.Api/Dockerfile
-    ports:
-        - "4100:4100"
-        - "4101:4101"
-
-  webapp.usuarios.api:
-    image: ${DOCKER_REGISTRY-}webappusuariosapi
-    build:
-      context: .
-      dockerfile: WebApp.Usuarios.Api/Dockerfile
-    ports:
-      - "4200:4200"
-      - "4201:4201"
-
+    - "4000:4000"
+    - "4001:4001"
   database:
     image: postgres:latest
     container_name: database
@@ -40,5 +21,3 @@ services:
         - ./.containers/gestao:/var/lib/postgresql/data
     ports:
         - 5433:5432
-  
-

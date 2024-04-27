@@ -4,10 +4,10 @@
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
     <DockerPublishLocally>False</DockerPublishLocally>
-    <ProjectGuid>1897b5c2-604f-4eb2-a162-c9b90993d74a</ProjectGuid>
+    <ProjectGuid>45221b96-4cf4-4c58-8db3-c923c3336579</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
-    <DockerServiceName>webapp.colaboradores.api</DockerServiceName>
+    <DockerServiceName>webapp.gestao.api</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
     <None Include="docker-compose.override.yml">
