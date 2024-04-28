@@ -18,6 +18,6 @@ services:
         - POSTGRES_PASSWORD = postgres
         - POSTGRES_HOST_AUTH_METHOD=trust
     volumes:
-        - ./.containers/gestao:/var/lib/postgresql/data
+        - /gestao:/var/lib/postgresql/data
     ports:
         - 5433:5432

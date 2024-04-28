@@ -1,5 +1,5 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.OpenApi.Models;
+using BuildingBlocks.Migrations;
+using Microsoft.EntityFrameworkCore;
 using WebApp.Gestao.Api.Config;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +15,12 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerService();
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<MigrationContext>();
+    db.Database.Migrate();
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
