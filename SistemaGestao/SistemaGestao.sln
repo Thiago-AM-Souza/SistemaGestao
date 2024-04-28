@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{45221B96-4CF4-4C58-8DB3-C923C3336579}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{010D1135-877C-4BDE-8ABD-52CC6B1334D0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{44FF52A2-E3B7-48B3-B15C-12E8DA086E38}"
@@ -38,8 +40,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuildingBlocks.Core", "BuildingBlocks.Core\BuildingBlocks.Core.csproj", "{FEAA54E8-DEE7-448F-A4A2-DE78242A330D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.Gestao.Api", "WebApp.Gestao.Api\WebApp.Gestao.Api.csproj", "{13C6604E-C4F5-4A72-8DA7-730AD0737097}"
-EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{45221B96-4CF4-4C58-8DB3-C923C3336579}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildingBlocks.IoC", "BuildingBlocks.IoC\BuildingBlocks.IoC.csproj", "{5BFEA299-801A-4122-ACD8-EE419FA68799}"
 EndProject
