@@ -23,6 +23,10 @@ namespace BuildingBlocks.Migrations.Models
                     .HasColumnType("varchar")                    
                     .IsRequired();
 
+            builder.Property(u => u.Desativado)
+                    .HasColumnType("boolean")
+                    .HasDefaultValue(false);
+
             builder.Property(u => u.Senha)
                     .IsRequired();
         }

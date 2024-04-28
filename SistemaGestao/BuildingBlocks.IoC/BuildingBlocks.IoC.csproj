@@ -7,8 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Application\" />
-    <Folder Include="Infra\" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BuildingBlocks.Migrations\BuildingBlocks.Migrations.csproj" />
+    <ProjectReference Include="..\Colaboradores.Application\Colaboradores.Application.csproj" />
+    <ProjectReference Include="..\Unidades.Application\Unidades.Application.csproj" />
+    <ProjectReference Include="..\Unidades.Data\Unidades.Data.csproj" />
+    <ProjectReference Include="..\Usuarios.Application\Usuarios.Application.csproj" />
+    <ProjectReference Include="..\Usuarios.Data\Usuarios.Data.csproj" />
   </ItemGroup>
 
 </Project>

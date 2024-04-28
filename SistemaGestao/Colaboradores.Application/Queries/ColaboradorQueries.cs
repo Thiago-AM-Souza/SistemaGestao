@@ -6,9 +6,9 @@ namespace Colaboradores.Application.Queries
 {
     public class ColaboradorQueries : IColaboradorQueries
     {
-        private readonly ColaboradorRepository _colaboradorRepository;
+        private readonly IColaboradorRepository _colaboradorRepository;
 
-        public ColaboradorQueries(ColaboradorRepository colaboradorRepository)
+        public ColaboradorQueries(IColaboradorRepository colaboradorRepository)
         {
             _colaboradorRepository = colaboradorRepository;
         }

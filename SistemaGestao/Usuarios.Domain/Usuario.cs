@@ -8,6 +8,8 @@ namespace Usuarios.Domain
         public string Senha { get; private set; }
         public bool Desativado { get; private set; }
 
+        protected Usuario() { }
+
         public Usuario(string login, string senha)
         {
             Login = login;

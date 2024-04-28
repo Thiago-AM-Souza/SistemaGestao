@@ -6,6 +6,8 @@ using WebApp.Gestao.Api.Controllers.Colaboradores.InputModels;
 
 namespace WebApp.Gestao.Api.Controllers.Colaboradores
 {
+    [ApiExplorerSettings(GroupName = "Colaboradores")]
+    [Route("api/colaboradores")]
     public class ColaboradoresController : MainController
     {
         private readonly IColaboradorQueries _colaboradorQueries;
@@ -20,12 +22,12 @@ namespace WebApp.Gestao.Api.Controllers.Colaboradores
         {
             var command = new CadastrarColaboradorCommand(inputModel.Nome,
                                                           inputModel.UnidadeId, 
-                                                          base.UsuarioId);
+                                                          inputModel.UsuarioId);
 
             var success = await _mediatorHandler.SendCommand(command);
 
             if (success)
-                return Created();
+                return Created("Colaboradores", "Colaborador cadastrado com sucesso.");
             else
                 return BadRequest("Erro ao Cadastrar colaborador");
         }

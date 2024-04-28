@@ -1,12 +1,13 @@
 ﻿using BuildingBlocks.Core.Handler;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.ObjectModel;
 using Usuarios.Application.Commands;
 using Usuarios.Application.Queries;
 using WebApp.Gestao.Api.Controllers.Usuarios.InputModels;
 
 namespace WebApp.Gestao.Api.Controllers.Usuarios
 {
+    [ApiExplorerSettings(GroupName = "Usuários")]
+    [Route("api/usuarios")]
     public class UsuariosController : MainController
     {
         private readonly IUsuarioQueries _usuarioQueries;
@@ -17,6 +18,7 @@ namespace WebApp.Gestao.Api.Controllers.Usuarios
         }
 
         [HttpPost("")]
+        [ProducesResponseType(StatusCodes.Status201Created)]
         public async Task<IActionResult> Post(CadastrarUsuarioInputModel cadastrarUsuario)
         {
             var command = new CadastrarUsuarioCommand(cadastrarUsuario.Login,
@@ -25,7 +27,7 @@ namespace WebApp.Gestao.Api.Controllers.Usuarios
             var success = await _mediatorHandler.SendCommand(command);
 
             if (success)
-                return Created();
+                return Created("Usuario", "Usuario cadastrado com sucesso.");
             else
                 return BadRequest("Erro ao Cadastrar usuário.");
         }

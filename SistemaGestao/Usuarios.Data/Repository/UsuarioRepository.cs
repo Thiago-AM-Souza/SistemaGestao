@@ -31,9 +31,14 @@ namespace Usuarios.Data.Repositories
 
         public async Task<IEnumerable<Usuario>> ObterTodosUsuarios(bool? desativado)
         {
-            return await _context.Usuarios
-                                 .Where(x => x.Desativado == desativado)
-                                 .ToListAsync();
+            var query = _context.Usuarios.AsQueryable();
+
+            if (desativado.HasValue)
+            {
+                query = query.Where(x => x.Desativado == desativado.Value);
+            }
+
+            return await query.ToListAsync();
         }
 
         public async Task<Usuario> ObterUsuarioPorId(Guid id)

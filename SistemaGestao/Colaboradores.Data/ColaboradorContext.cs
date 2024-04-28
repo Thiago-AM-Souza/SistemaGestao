@@ -10,7 +10,7 @@ namespace Colaboradores.Data
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Unidade> Unidades { get; set; }
 
-        public ColaboradorContext(DbContextOptionsBuilder optionsBuilder) : base(optionsBuilder.Options)
+        public ColaboradorContext(DbContextOptionsBuilder<ColaboradorContext> optionsBuilder) : base(optionsBuilder.Options)
         {            
         }
 

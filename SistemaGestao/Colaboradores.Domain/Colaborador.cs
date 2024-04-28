@@ -11,6 +11,8 @@ namespace Colaboradores.Domain
         public Usuario Usuario { get; private set; }
         public Unidade Unidade { get; private set; }
 
+        protected Colaborador() { }
+
         public Colaborador(string nome, 
                            Usuario usuario, 
                            Unidade unidade)

@@ -77,7 +77,9 @@ namespace BuildingBlocks.Migrations.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<bool>("Desativado")
-                        .HasColumnType("boolean");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false);
 
                     b.Property<string>("Login")
                         .IsRequired()

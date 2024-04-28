@@ -12,7 +12,5 @@ namespace WebApp.Gestao.Api.Controllers
         {
             _mediatorHandler = mediatorHandler;
         }
-
-        protected Guid UsuarioId { get; set; }
     }
 }

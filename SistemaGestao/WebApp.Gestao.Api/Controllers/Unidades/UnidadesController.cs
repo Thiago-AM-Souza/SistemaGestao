@@ -6,6 +6,8 @@ using WebApp.Gestao.Api.Controllers.Unidades.InputModels;
 
 namespace WebApp.Gestao.Api.Controllers.Unidades
 {
+    [ApiExplorerSettings(GroupName = "Unidades")]
+    [Route("api/unidades")]
     public class UnidadesController : MainController
     {
         private readonly IUnidadeQueries _unidadeQueries;
@@ -24,9 +26,9 @@ namespace WebApp.Gestao.Api.Controllers.Unidades
             var success = await _mediatorHandler.SendCommand(command);
 
             if (success)
-                return Created();
+                return Created("Unidade", "Unidade cadastrada com sucesso.");
             else
-                return BadRequest("Erro ao cadastrar usuário.");
+                return BadRequest("Erro ao cadastrar unidade.");
         }
 
         [HttpPatch("desativar/{id:guid}")]
@@ -52,7 +54,7 @@ namespace WebApp.Gestao.Api.Controllers.Unidades
             if (success)
                 return Ok();
             else
-                return BadRequest("Erro ao Desativar usuário.");
+                return BadRequest("Erro ao Ativar unidade.");
         }
 
         [HttpGet("")]

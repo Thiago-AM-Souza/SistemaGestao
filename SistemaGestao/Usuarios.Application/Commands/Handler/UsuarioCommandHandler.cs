@@ -20,6 +20,11 @@ namespace Usuarios.Application.Commands.Handler
         {
             try
             {
+                if (string.IsNullOrEmpty(command.Login) ||
+                    string.IsNullOrEmpty(command.Senha)) {
+                    return false;
+                }
+
                 var usuario = new Usuario(command.Login,
                                           command.Senha);
 
@@ -42,7 +47,7 @@ namespace Usuarios.Application.Commands.Handler
             {
                 var usuario = await _usuarioRepository.ObterUsuarioPorId(command.Id);
 
-                if (usuario == null)
+                if (usuario == null || string.IsNullOrEmpty(command.Senha))
                 {
                     return false;
                 }

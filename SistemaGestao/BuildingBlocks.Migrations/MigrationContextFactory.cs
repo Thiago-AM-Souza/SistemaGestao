@@ -19,7 +19,7 @@ namespace BuildingBlocks.Migrations
             var connectionString = configuration.GetConnectionString("DbConnection");
 
             optionsBuilder.UseNpgsql(connectionString);
-
+            
             return new MigrationContext(optionsBuilder.Options);
         }
     }

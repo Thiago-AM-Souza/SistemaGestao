@@ -2,7 +2,7 @@
 {
     public class AtualizarUsuarioInputModel
     {
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
         public string Senha { get; set; }
     }
 }
