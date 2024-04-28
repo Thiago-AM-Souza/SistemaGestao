@@ -10,8 +10,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.2.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Config\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BuildingBlocks.Core\BuildingBlocks.Core.csproj" />
+    <ProjectReference Include="..\Colaboradores.Application\Colaboradores.Application.csproj" />
+    <ProjectReference Include="..\Unidades.Application\Unidades.Application.csproj" />
+    <ProjectReference Include="..\Usuarios.Application\Usuarios.Application.csproj" />
   </ItemGroup>
 
 </Project>

@@ -54,6 +54,10 @@ namespace BuildingBlocks.Migrations.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
+                    b.Property<string>("Codigo")
+                        .IsRequired()
+                        .HasColumnType("varchar(15)");
+
                     b.Property<bool>("Desativado")
                         .HasColumnType("boolean");
 

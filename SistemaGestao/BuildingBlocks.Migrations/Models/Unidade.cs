@@ -7,6 +7,7 @@ namespace BuildingBlocks.Migrations.Models
     {
         public Guid Id { get; set; }
         public string Nome { get; set; }
+        public string Codigo { get; set; }
         public bool Desativado { get; set; }
         public List<Colaborador> Colaboradores { get; set; }
 
@@ -22,6 +23,10 @@ namespace BuildingBlocks.Migrations.Models
 
             builder.Property(u => u.Nome)
                 .HasColumnType("varchar(50)")
+                .IsRequired();
+
+            builder.Property(u => u.Codigo)
+                .HasColumnType("varchar(15)")
                 .IsRequired();
 
             builder.HasMany(u => u.Colaboradores)

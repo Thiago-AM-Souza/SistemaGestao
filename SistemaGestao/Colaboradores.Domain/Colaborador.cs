@@ -2,7 +2,7 @@
 
 namespace Colaboradores.Domain
 {
-    public class Colaborador : Entity
+    public class Colaborador : Entity, IAggregateRoot
     {
         public string Nome { get; private set; }
         public Guid UsuarioId { get; private set; }
@@ -20,6 +20,13 @@ namespace Colaboradores.Domain
             Unidade = unidade;
             UsuarioId = usuario.Id;
             UnidadeId = unidade.Id;
+        }
+
+        public void Alterar(string nome,
+                            Unidade unidade)
+        {
+            Nome = nome;
+            Unidade = unidade;
         }
     }
 }

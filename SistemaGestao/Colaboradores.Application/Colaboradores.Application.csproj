@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Commands\" />
+    <ProjectReference Include="..\BuildingBlocks.Core\BuildingBlocks.Core.csproj" />
+    <ProjectReference Include="..\Colaboradores.Data\Colaboradores.Data.csproj" />
+    <ProjectReference Include="..\Colaboradores.Domain\Colaboradores.Domain.csproj" />
   </ItemGroup>
 
 </Project>

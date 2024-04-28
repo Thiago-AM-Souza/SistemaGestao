@@ -2,16 +2,16 @@
 
 namespace Unidades.Domain
 {
-    public class Unidade : Entity
+    public class Unidade : Entity, IAggregateRoot
     {        
-        public int Codigo { get; private set; }
+        public string Codigo { get; private set; }
         public string Nome { get; private set; }
         public bool Desativado { get; private set; }
 
         private readonly List<Colaborador> _colaboradores;
         public IReadOnlyList<Colaborador> Colaboradores => _colaboradores;
 
-        public Unidade(int codigo, string nome)
+        public Unidade(string codigo, string nome)
         {
             Codigo = codigo;
             Nome = nome;

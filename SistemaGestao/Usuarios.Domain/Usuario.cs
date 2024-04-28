@@ -2,7 +2,7 @@
 
 namespace Usuarios.Domain
 {
-    public class Usuario : Entity
+    public class Usuario : Entity, IAggregateRoot
     {
         public string Login { get; private set; }
         public string Senha { get; private set; }
@@ -14,7 +14,7 @@ namespace Usuarios.Domain
             Senha = senha;
         }
 
-        public void AtualizarUsuario(string senha)
+        public void Atualizar(string senha)
         {
             Senha = senha;
         }
