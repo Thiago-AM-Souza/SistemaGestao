@@ -6,18 +6,6 @@ services:
     build:
       context: .
       dockerfile: WebApp.Gestao.Api/Dockerfile
-    ports:
-    - "4000:4000"
-    - "4001:4001"
+    
   database:
     image: postgres:latest
-    container_name: database
-    environment:
-        - POSTGRES_DB = gestao
-        - POSTGRES_USER = postgres
-        - POSTGRES_PASSWORD = postgres
-        - POSTGRES_HOST_AUTH_METHOD=trust
-    volumes:
-        - /gestao:/var/lib/postgresql/data
-    ports:
-        - 5433:5432

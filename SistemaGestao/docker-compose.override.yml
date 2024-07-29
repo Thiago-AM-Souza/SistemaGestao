@@ -7,8 +7,20 @@ services:
       - ASPNETCORE_HTTP_PORTS=4000
       - ASPNETCORE_HTTPS_PORTS=4001
     ports:
-      - "4000"
-      - "4001"
+      - "4000:4000"
+      - "4001:4001"
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
       - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+
+  database:
+    container_name: database
+    environment:
+      - POSTGRES_DB = gestao
+      - POSTGRES_USER = postgres
+      - POSTGRES_PASSWORD = postgres
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    volumes:
+      - /gestao:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
